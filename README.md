@@ -1,7 +1,5 @@
 # InstrumentKit
 
-[![CI Status](https://github.com/bdrelling/InstrumentKit/actions/workflows/tests.yml/badge.svg)](https://github.com/bdrelling/InstrumentKit/actions/workflows/tests.yml)
-[![Latest Release](https://img.shields.io/github/v/tag/bdrelling/instruments.fyi?color=blue&label=latest)](https://github.com/bdrelling/instruments.fyi/releases)
 [![Swift Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbdrelling%2Finstruments.fyi%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/bdrelling/instruments.fyi)
 [![Platform Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbdrelling%2Finstruments.fyi%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/bdrelling/instruments.fyi)
 [![License](https://img.shields.io/github/license/bdrelling/instruments.fyi)](https://github.com/bdrelling/instruments.fyi/blob/main/LICENSE)
@@ -53,4 +51,4 @@ Special thanks to [AudioKit](https://github.com/AudioKit/AudioKit) for all of th
 
 ## License
 
-**InstrumentKit** is released under the MIT license. See [LICENSE](/LICENSE) for details.
+**instruments.fyi** is released under the MIT license. See [LICENSE](/LICENSE) for details.
