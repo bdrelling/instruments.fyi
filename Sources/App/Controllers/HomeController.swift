@@ -1,11 +1,11 @@
 // Copyright © 2022 Brian Drelling. All rights reserved.
 
-import InstrumentKit
+import PlotVapor
 import Vapor
 
 final class HomeController {
-    private func home(req: Request) async throws -> String {
-        "No frontend just yet! Visit \(req.application.environment.apiURL)/instruments to check out the API."
+    private func home(req: Request) async throws -> View {
+        try await req.plot.render(HomePage())
     }
 }
 

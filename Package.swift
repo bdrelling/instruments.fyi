@@ -12,6 +12,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/vapor", from: "4.63.0"),
         // External
         .package(url: "https://github.com/bdrelling/InstrumentKit", .upToNextMinor(from: "0.1.7")),
+        .package(url: "https://github.com/bdrelling/PlotVapor", .upToNextMinor(from: "0.3.2")),
         // Development
         .package(url: "https://github.com/swift-kipple/Tools", from: "0.2.3"),
     ],
@@ -21,6 +22,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "InstrumentKit", package: "InstrumentKit"),
+                .product(name: "PlotVapor", package: "PlotVapor"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
