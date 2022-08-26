@@ -3,7 +3,7 @@ name: Deploy Container to DigitalOcean
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [ci]
     # Add paths!
 
 env:
