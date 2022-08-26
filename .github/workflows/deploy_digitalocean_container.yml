@@ -3,7 +3,7 @@ name: Deploy Container to DigitalOcean
 on:
   workflow_dispatch:
   push:
-    branches: [ci]
+    branches: [main]
 
 env:
   registry_domain: registry.digitalocean.com
