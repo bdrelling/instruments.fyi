@@ -9,5 +9,5 @@ on:
 
 jobs:
   test:
-    uses: swift-kipple/Tools/.github/workflows/swift_test_vapor_website.yml
+    uses: bdrelling/workflows/.github/workflows/swift_test_vapor_website.yml@main
     secrets: inherit
