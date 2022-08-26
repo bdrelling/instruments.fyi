@@ -40,16 +40,9 @@ jobs:
       - name: Login to DigitalOcean Container Registry
         run: doctl registry login --expiry-seconds 600
 
-      - name: Generate GitHub Commit SHA-7
-        id: github_sha
-        shell: bash
-        run: |
-          SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
-          echo "::set-output name=sha::$SHORT_SHA"
-
       - name: Build and Push
         uses: docker/build-push-action@v2
         with:
-          tags: ${{ env.registry_domain }}/${{ env.registry_name }}/${{ env.image_name }}:${{ steps.github_sha.outputs.sha }}
+          tags: ${{ env.registry_domain }}/${{ env.registry_name }}/${{ env.image_name }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
