@@ -1,0 +1,55 @@
+name: Deploy Container to DigitalOcean
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+env:
+  registry_domain: registry.digitalocean.com
+  registry_name: brian-drelling
+  registry_username: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+  registry_password: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+  image_name: instruments-fyi
+
+jobs:
+  deploy:
+    name: Deploy Container
+    # Available Runners: https://github.com/actions/virtual-environments
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.0
+        with:
+          access_token: ${{ github.token }}
+
+      # Docker Actions: https://github.com/marketplace/actions/build-and-push-docker-images#path-context
+      # By default, this action uses the Git context so you don't need to use the checkout action
+      # to check out the repository because this will be done directly by BuildKit.
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Login to DigitalOcean Container Registry
+        run: doctl registry login --expiry-seconds 600
+
+      - name: Generate GitHub Commit SHA-7
+        id: github_sha
+        shell: bash
+        run: |
+          SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
+          echo "::set-output name=sha::$SHORT_SHA"
+
+      - name: Build and Push
+        uses: docker/build-push-action@v2
+        with:
+          tags: ${{ env.registry_domain }}/${{ env.registry_name }}/${{ env.image_name }}:${{ steps.github_sha.outputs.sha }}
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
