@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   push:
     branches: [ci]
-    # Add paths!
 
 env:
   registry_domain: registry.digitalocean.com
