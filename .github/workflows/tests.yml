@@ -1,0 +1,13 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    # Add paths!
+
+jobs:
+  test:
+    uses: swift-kipple/Tools/.github/workflows/swift_test_vapor_website.yml
+    secrets: inherit
