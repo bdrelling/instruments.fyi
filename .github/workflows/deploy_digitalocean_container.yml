@@ -25,7 +25,7 @@ jobs:
         uses: styfle/cancel-workflow-action@0.10.0
         with:
           access_token: ${{ github.token }}
-      - run: ${{ env.registry_domain }}/${{ env.registry_name }}/${{ env.image_name }}
+      - run: echo ${{ env.registry_domain }}/${{ env.registry_name }}/${{ env.image_name }}
       # Docker Actions: https://github.com/marketplace/actions/build-and-push-docker-images#path-context
       # By default, this action uses the Git context so you don't need to use the checkout action
       # to check out the repository because this will be done directly by BuildKit.
