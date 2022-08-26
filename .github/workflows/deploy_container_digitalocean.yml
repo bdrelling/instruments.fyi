@@ -44,6 +44,6 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v2
         with:
-          tags: ${{ env.registry_domain }}/${{ env.registry_name }}/${{ env.image_name }}
+          tags: ${{ env.registry_domain }}/${{ inputs.registry_name }}/${{ inputs.image_name }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
