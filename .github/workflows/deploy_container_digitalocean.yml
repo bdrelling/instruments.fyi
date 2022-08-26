@@ -1,14 +1,17 @@
 name: Deploy Container to DigitalOcean
 
 on:
-  workflow_dispatch:
-  push:
-    branches: [main]
+  workflow_call:
+    inputs:
+      registry_name:
+        required: true
+        type: string
+      image_name:
+        required: true
+        type: string
 
 env:
   registry_domain: registry.digitalocean.com
-  registry_name: brian-drelling
-  image_name: instruments-fyi
 
 jobs:
   deploy:

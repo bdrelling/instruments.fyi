@@ -1,0 +1,14 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy_container_digitalocean.yml
+    secrets: inherit
+    with:
+      registry_name: brian-drelling
+      image_name: instruments-fyi
