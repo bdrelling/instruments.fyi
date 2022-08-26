@@ -1,0 +1,75 @@
+name: Deploy Container to DigitalOcean
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    # Add paths!
+
+env:
+  registry: registry.digitalocean.com
+  registry_name: briandrelling
+  registry_username: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+  registry_password: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+  image_name: briandrelling
+  image_tag: latest
+
+jobs:
+  deploy:
+    name: Deploy Container
+    # Available Runners: https://github.com/actions/virtual-environments
+    runs-on: ubuntu-latest
+    # Available Docker Images: https://hub.docker.com/_/swift/
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.0
+        with:
+          access_token: ${{ github.token }}
+      # Docker Actions: https://github.com/marketplace/actions/build-and-push-docker-images#path-context
+      # By default, this action uses the Git context so you don't need to use the actions/checkout action to check out the repository because this will be done directly by BuildKit.
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Log in to DigitalOcean Container Registry with short-lived credentials
+        run: doctl registry login --expiry-seconds 600
+      # - name: Login to GitHub
+      #   uses: docker/login-action@v2
+      #   with:
+      #     registry: ghcr.io
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GITHUB_TOKEN }}
+      # - run: docker pull ghcr.io/bdrelling/briandrelling:latest
+      # - run: docker tag ghcr.io/bdrelling/briandrelling:latest registry.digitalocean.com/brian-drelling/briandrelling:latest
+      - run: printenv
+      - run: echo ${{ env.registry}}/${{ env.registry_name}}/${{ env.image_name }}
+      - name: Build and Push
+        uses: docker/build-push-action@v2
+        with:
+          tags: registry.digitalocean.com/brian-drelling/instruments-fyi
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
+      # - run: docker push registry.digitalocean.com/brian-drelling/briandrelling
+      # - name: Push image to DigitalOcean
+      # run: doctl push ${{ env.registry}}/${{ env.registry_name}}/${{ env.image_name }}
+      # - name: DigitalOcean App Platform deployment
+      #   uses: digitalocean/app_action@v1
+      #   with:
+      #     app_name: briandrelling
+      #     token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      # - name: Login to DigitalOcean
+      #   uses: docker/login-action@v2
+      #   with:
+      #     registry: ${{ env.registry }}
+      #     username: ${{ env.registry_username }}
+      #     password: ${{ env.registry_password }}
+      # - name: Build image and push to Docker Hub and GitHub Container Registry
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     tags: ${{ env.registry}}/${{ env.registry_name}}/${{ env.tag }}
+      #     # build on feature branches, push only on main branch
+      #     push: ${{ github.ref == 'refs/heads/main' }}
