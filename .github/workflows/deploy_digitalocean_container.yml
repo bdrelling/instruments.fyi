@@ -8,8 +8,6 @@ on:
 env:
   registry_domain: registry.digitalocean.com
   registry_name: brian-drelling
-  registry_username: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-  registry_password: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
   image_name: instruments-fyi
 
 jobs:
