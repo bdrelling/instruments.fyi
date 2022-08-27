@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    uses: bdrelling/workflows/.github/workflows/swift_test_vapor_website.yml@main
+    uses: bdrelling/ci/.github/workflows/swift_test_vapor_website.yml@main
     secrets: inherit
     with:
       scheme: InstrumentsFYI-Package

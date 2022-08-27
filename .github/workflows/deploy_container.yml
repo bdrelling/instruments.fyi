@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    uses: bdrelling/workflows/.github/workflows/deploy_container_digitalocean.yml@main
+    uses: bdrelling/ci/.github/workflows/deploy_container_digitalocean.yml@main
     secrets: inherit
     with:
       registry_name: brian-drelling
