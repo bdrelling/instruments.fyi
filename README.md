@@ -1,6 +1,6 @@
 # instruments.fyi
 
-[![CI Status](https://github.com/bdrelling/instruments.fyi/actions/workflows/tests.yml/badge.svg)](https://github.com/bdrelling/instruments.fyi/actions/workflows/tests.yml)
+[![CI Status](https://github.com/bdrelling/instruments.fyi/actions/workflows/build.yml/badge.svg)](https://github.com/bdrelling/instruments.fyi/actions/workflows/build.yml)
 [![Deploy](https://github.com/bdrelling/instruments.fyi/actions/workflows/deploy_container.yml/badge.svg)](https://github.com/bdrelling/instruments.fyi/actions/workflows/deploy_container.yml)
 [![Latest Release](https://img.shields.io/github/v/tag/bdrelling/InstrumentKit?color=blue&label=latest)](https://github.com/bdrelling/InstrumentKit/tags)
 [![Swift Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbdrelling%2Finstruments.fyi%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/bdrelling/instruments.fyi)
