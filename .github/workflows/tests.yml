@@ -13,3 +13,4 @@ jobs:
     secrets: inherit
     with:
       scheme: InstrumentsFYI-Package
+      subcommand: build
