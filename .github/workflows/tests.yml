@@ -4,14 +4,13 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
-    # Add paths!
 
 jobs:
-  test:
-    uses: bdrelling/ci/.github/workflows/swift_test_vapor_website.yml@main
+  swift_test:
+    uses: bdrelling/ci/.github/workflows/swift_test.yml@main
     secrets: inherit
     with:
       scheme: InstrumentsFYI-Package
       subcommand: build
+      platforms: macOS Linux
+      swift-versions: 5.6
