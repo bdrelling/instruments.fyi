@@ -10,7 +10,7 @@ jobs:
     uses: bdrelling/ci/.github/workflows/swift_test.yml@main
     secrets: inherit
     with:
-      scheme: InstrumentsFYI-Package
+      scheme: InstrumentsFYI
       subcommand: build
       platforms: macOS Linux
       swift-versions: 5.6
