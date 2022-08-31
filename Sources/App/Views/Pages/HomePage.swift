@@ -32,7 +32,7 @@ struct Intro: Component {
             }
 
             Paragraph {
-                Text("It's a super cool project, for instruments.")
+                Text("It's a super cool project, for instruments. Deployment worked!")
             }
         }
         .class("intro")
