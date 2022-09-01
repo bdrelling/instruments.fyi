@@ -46,11 +46,14 @@ fastlane/screenshots
 fastlane/[Pp]review.html
 
 ## Dotenv
-.env.local
+.env
+.env.*
+
+## Build / Deploy Directories
+build/
+deploy/
+output/
 
 ## Local Artifacts
 bin/
 tmp/
-
-/Package.resolved
-TunKit/Package.resolved

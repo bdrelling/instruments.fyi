@@ -19,7 +19,7 @@ x-shared_environment: &shared_environment
 
 services:
   app:
-    image: instruments:latest
+    image: instruments-fyi:latest
     container_name: app
     platform: "linux/amd64"
     build:
