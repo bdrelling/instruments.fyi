@@ -14,7 +14,7 @@ let package = Package(
         .package(url: "https://github.com/bdrelling/InstrumentKit", .upToNextMinor(from: "0.1.7")),
         .package(url: "https://github.com/bdrelling/PlotVapor", .upToNextMinor(from: "0.3.2")),
         // Development
-        .package(url: "https://github.com/swift-kipple/Tools", from: "0.2.3"),
+        .package(url: "https://github.com/swift-kipple/Tools", from: "0.3.1"),
     ],
     targets: [
         .target(
