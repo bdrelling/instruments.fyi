@@ -10,8 +10,7 @@ env:
   # DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
 jobs:
-  deploy_github:
-    name: Deploy to GitHub Container Registry
+  prepare:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
@@ -19,22 +18,15 @@ jobs:
         with:
           access_token: ${{ github.token }}
 
+  deploy_github:
+    name: Deploy to GitHub Container Registry
+    runs-on: ubuntu-latest
+    steps:
       - name: Build and Deploy Container
         uses: bdrelling/instruments.fyi/.github/actions/deploy-container@main
         with:
-          registry: ghcr.io
-          registry_name: ${{ github.actor }}
-          registry_username: ${{ github.actor }}
-          registry_password: ${{ secrets.GITHUB_TOKEN }}
+          registry: registry.digitalocean.com
+          registry_name: brian-drelling
+          registry_username: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          registry_password: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
           image_name: instruments-fyi:latest
-
-  # deploy_digitalocean:
-  #   uses: ./.github/workflows/build_and_deploy_docker_container.yml
-  #   # uses: bdrelling/ci/.github/workflows/deploy_container_digitalocean.yml@main
-  #   secrets: inherit
-  #   with:
-  #     registry: registry.digitalocean.com
-  #     registry_name: brian-drelling
-  #     registry_username: ${{ env.DIGITALOCEAN_ACCESS_TOKEN }}
-  #     registry_password: ${{ env.DIGITALOCEAN_ACCESS_TOKEN }}
-  #     image_name: instruments-fyi:latest
