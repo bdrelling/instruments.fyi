@@ -7,8 +7,12 @@ on:
 
 jobs:
   deploy:
-    uses: bdrelling/ci/.github/workflows/deploy_container_digitalocean.yml@main
+    uses: ./.github/workflows/deploy_container_github.yml
+    # uses: bdrelling/ci/.github/workflows/deploy_container_digitalocean.yml@main
     secrets: inherit
     with:
-      registry_name: brian-drelling
+      registry: ghcr.io
+      registry_name: bdrelling
+      registry_username: ${{ github.actor }}
+      registry_password: ${{ github.token }}
       image_name: instruments-fyi
