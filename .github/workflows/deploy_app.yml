@@ -4,6 +4,16 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths:
+      - '.github/workflows/deploy_app.yml'
+      - 'Plugins/**'
+      - 'Snippets/**'
+      - 'Sources/**'
+      - 'Tests/**'
+      - '**.swift'
+      - 'Package.resolved'
+      - 'Dockerfile'
+      - 'docker-compose.yml'
 
 jobs:
   prepare:
