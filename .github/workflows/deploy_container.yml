@@ -20,7 +20,7 @@ jobs:
           access_token: ${{ github.token }}
 
       - name: Build and Deploy Container
-        uses: bdrelling/instruments.fyi/.github/actions/deploy-cintainer@main
+        uses: bdrelling/instruments.fyi/.github/actions/deploy-container@main
         with:
           registry: ghcr.io
           registry_name: ${{ github.actor }}
