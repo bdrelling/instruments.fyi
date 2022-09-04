@@ -6,18 +6,20 @@ on:
     branches: [main]
 
 env:
-  DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+  registry_password: secrets.GITHUB_TOKEN
+  # DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
 jobs:
   deploy_github:
+    name: Deploy to GitHub Container Registry
     uses: ./.github/workflows/build_and_deploy_docker_container.yml
     # uses: bdrelling/ci/.github/workflows/deploy_container_digitalocean.yml@main
     secrets: inherit
     with:
       registry: ghcr.io
-      registry_name: bdrelling
+      registry_name: ${{ github.actor }}
       registry_username: ${{ github.actor }}
-      registry_password: ${{ secrets.GITHUB_TOKEN }}
+      registry_password: ${{ env.registry_password }}
       image_name: instruments-fyi:latest
   # deploy_digitalocean:
   #   uses: ./.github/workflows/build_and_deploy_docker_container.yml
