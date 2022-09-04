@@ -32,6 +32,8 @@ private func configureRedirectMiddleware(_ app: Application) throws {
             primaryHost: "instruments.local",
             redirectedHosts: [
                 "www.instruments.local",
+                "localhost",
+                "127.0.0.1",
             ],
             port: 8080,
             scheme: .http

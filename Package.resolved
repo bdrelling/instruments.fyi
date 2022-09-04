@@ -266,8 +266,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/VaporExtensions",
       "state" : {
-        "revision" : "015ecc87ef1f5fabec7b10048c7cb7776badba5a",
-        "version" : "0.1.8"
+        "revision" : "6fc6a59eb08463699f54c6d901d8116e2210b733",
+        "version" : "0.1.11"
       }
     },
     {
