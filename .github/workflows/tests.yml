@@ -4,6 +4,14 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+    paths:
+      - '.github/workflows/tests.yml'
+      - 'Plugins/**'
+      - 'Snippets/**'
+      - 'Sources/**'
+      - 'Tests/**'
+      - '**.swift'
+      - 'Package.resolved'
 
 jobs:
   swift_test:
