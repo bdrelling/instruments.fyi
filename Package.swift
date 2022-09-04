@@ -13,6 +13,7 @@ let package = Package(
         // External
         .package(url: "https://github.com/bdrelling/InstrumentKit", .upToNextMinor(from: "0.1.7")),
         .package(url: "https://github.com/bdrelling/PlotVapor", .upToNextMinor(from: "0.3.2")),
+        .package(url: "https://github.com/bdrelling/VaporExtensions", .upToNextMinor(from: "0.1.8")),
         // Development
         .package(url: "https://github.com/swift-kipple/Tools", from: "0.3.1"),
     ],
@@ -23,6 +24,7 @@ let package = Package(
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "InstrumentKit", package: "InstrumentKit"),
                 .product(name: "PlotVapor", package: "PlotVapor"),
+                .product(name: "VaporExtensions", package: "VaporExtensions"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

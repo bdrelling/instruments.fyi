@@ -28,6 +28,33 @@
       }
     },
     {
+      "identity" : "core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swift-kipple/Core",
+      "state" : {
+        "revision" : "906e5d819342b38d4d919e875f38be8fcd7b31e9",
+        "version" : "0.10.3"
+      }
+    },
+    {
+      "identity" : "fluent",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/fluent",
+      "state" : {
+        "revision" : "26c446002f03c5ab34b20d86873014ef3d92d0da",
+        "version" : "4.5.0"
+      }
+    },
+    {
+      "identity" : "fluent-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/fluent-kit.git",
+      "state" : {
+        "revision" : "38670d2eefcba27530272946d627ac8d4e45f017",
+        "version" : "1.35.1"
+      }
+    },
+    {
       "identity" : "instrumentkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/InstrumentKit",
@@ -70,6 +97,15 @@
       "state" : {
         "revision" : "ffac7b3a127ce1e85fb232f1a6271164628809ad",
         "version" : "4.6.0"
+      }
+    },
+    {
+      "identity" : "sql-kit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor/sql-kit.git",
+      "state" : {
+        "revision" : "3c5413a229bc2abc962dab17ea66d25e448ad344",
+        "version" : "3.21.0"
       }
     },
     {
@@ -223,6 +259,15 @@
       "state" : {
         "revision" : "c814b6f6900bd479fd93fa28aea3b45afb6ea342",
         "version" : "4.65.0"
+      }
+    },
+    {
+      "identity" : "vaporextensions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bdrelling/VaporExtensions",
+      "state" : {
+        "revision" : "015ecc87ef1f5fabec7b10048c7cb7776badba5a",
+        "version" : "0.1.8"
       }
     },
     {
