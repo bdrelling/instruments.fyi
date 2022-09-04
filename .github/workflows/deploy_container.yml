@@ -17,7 +17,7 @@ jobs:
       registry: ghcr.io
       registry_name: bdrelling
       registry_username: ${{ github.actor }}
-      registry_password: ${{ github.token }}
+      registry_password: ${{ secrets.GITHUB_TOKEN }}
       image_name: instruments-fyi:latest
   # deploy_digitalocean:
   #   uses: ./.github/workflows/build_and_deploy_docker_container.yml
