@@ -1,0 +1,15 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  prepare:
+    name: Prepare
+    uses: bdrelling/ci/.github/workflows/deploy_to_digitalocean.yml@main
+    secrets: inherit
+    with:
+      registry_name: brian-drelling
+      image_name: instruments-fyi:latest
