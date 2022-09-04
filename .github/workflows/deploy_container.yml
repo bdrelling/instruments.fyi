@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   deploy:
     uses: ./.github/workflows/deploy_container_github.yml
@@ -14,5 +17,5 @@ jobs:
       registry: ghcr.io
       registry_name: bdrelling
       registry_username: ${{ github.actor }}
-      registry_password: ${{ secrets.GITHUB_TOKEN }}
+      registry_password: ${{ env.GITHUB_TOKEN }}
       image_name: instruments-fyi
