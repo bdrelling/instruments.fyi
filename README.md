@@ -2,10 +2,10 @@
 
 [![CI Status](https://github.com/bdrelling/instruments.fyi/actions/workflows/tests.yml/badge.svg)](https://github.com/bdrelling/instruments.fyi/actions/workflows/tests.yml)
 [![Deploy](https://github.com/bdrelling/instruments.fyi/actions/workflows/deploy_app.yml/badge.svg)](https://github.com/bdrelling/instruments.fyi/actions/workflows/deploy_app.yml)
-[![Latest Release](https://img.shields.io/github/v/tag/bdrelling/InstrumentKit?color=blue&label=latest)](https://github.com/bdrelling/InstrumentKit/tags)
-[![Swift Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbdrelling%2Finstruments.fyi%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/bdrelling/instruments.fyi)
-[![Platform Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbdrelling%2Finstruments.fyi%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/bdrelling/instruments.fyi)
-[![License](https://img.shields.io/github/license/bdrelling/instruments.fyi)](https://github.com/bdrelling/instruments.fyi/blob/main/LICENSE)
+[![Latest Release](https://img.shields.io/github/v/tag/bdrelling/InstrumentKit?color=blue&label=)](https://github.com/bdrelling/InstrumentKit/tags)
+[![Swift Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbdrelling%2Finstruments.fyi%2Fbadge%3Ftype%3Dswift-versions&label=)](https://swiftpackageindex.com/bdrelling/instruments.fyi)
+[![Platform Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fbdrelling%2Finstruments.fyi%2Fbadge%3Ftype%3Dplatforms&label=)](https://swiftpackageindex.com/bdrelling/instruments.fyi)
+[![License](https://img.shields.io/github/license/bdrelling/instruments.fyi?label=)](https://github.com/bdrelling/instruments.fyi/blob/main/LICENSE)
 
 **instruments.fyi** provides API access to localized musical instruments and their tunings provided by [InstrumentKit](https://github.com/bdrelling/InstrumentKit).
 
