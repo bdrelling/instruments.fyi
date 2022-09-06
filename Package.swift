@@ -15,7 +15,7 @@ let package = Package(
         .package(url: "https://github.com/bdrelling/PlotVapor", .upToNextMinor(from: "0.3.2")),
         .package(url: "https://github.com/bdrelling/VaporExtensions", .upToNextMinor(from: "0.1.11")),
         // Development
-        .package(url: "https://github.com/swift-kipple/Tools", from: "0.3.1"),
+        .package(url: "https://github.com/swift-kipple/Tools", from: "0.3.0"),
     ],
     targets: [
         .target(
