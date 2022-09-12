@@ -7,34 +7,16 @@ import Vapor
 struct HomePage: TemplatedPage {
     let title = "Home"
 
-    var content: Component {
+    var body: Component {
         ComponentGroup {
             Div {
                 Intro()
 
                 // InstrumentsTable()
 
-                Footer()
+                PrimaryFooter()
             }
             .class("container")
         }
-    }
-}
-
-struct Intro: Component {
-    var body: Component {
-        Section {
-            H1 {
-                Text("Welcome to ")
-                Span("instruments.fyi")
-                    .class("name")
-                Span(".")
-            }
-
-            Paragraph {
-                Text("It's a super cool project, for instruments. Deployment worked!")
-            }
-        }
-        .class("intro")
     }
 }

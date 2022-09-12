@@ -2,7 +2,7 @@
 
 import Plot
 
-struct Footer: Component {
+struct PrimaryFooter: Component {
     private static let vaporURL = "https://vapor.codes"
 
     var body: Component {

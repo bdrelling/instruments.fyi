@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/PlotVapor",
       "state" : {
-        "revision" : "f87f3a59cb876d52cfa8edb17973b52264a40c73",
-        "version" : "0.3.4"
+        "revision" : "e5a40c9e74dc0b93b189a918bb79ebacb40d8c52",
+        "version" : "0.4.1"
       }
     },
     {
@@ -262,12 +262,21 @@
       }
     },
     {
+      "identity" : "vapor-sitemap",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vapor-community/vapor-sitemap",
+      "state" : {
+        "revision" : "8a6246b3593fbec3f920b2d76ad05c1ecdff4cd1",
+        "version" : "1.1.0"
+      }
+    },
+    {
       "identity" : "vaporextensions",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/VaporExtensions",
       "state" : {
-        "revision" : "6fc6a59eb08463699f54c6d901d8116e2210b733",
-        "version" : "0.1.11"
+        "revision" : "54516486fade14e436ed0d26dd3c66cfb9dae7d6",
+        "version" : "0.2.0"
       }
     },
     {

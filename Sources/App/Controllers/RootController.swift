@@ -3,20 +3,15 @@
 import Vapor
 
 final class RootController: RouteCollection {
-    private let application: Application
-
-    init(app application: Application) {
-        self.application = application
-    }
-
     func boot(routes: RoutesBuilder) throws {
-        try routes
-            .register(collection: HomeController())
+        // Status
+        try routes.grouped("status").register(collection: StatusController())
 
-        try routes
-            .grouped("status")
-            .register(collection: StatusController())
+        // Website
+        try routes.register(collection: HomeController())
 
+        // API
+        #warning("Rate-limit these endpoints!")
         try routes
             .grouped("api")
             .grouped("instruments")
