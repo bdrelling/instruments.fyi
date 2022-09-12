@@ -8,18 +8,23 @@ public struct SplashTemplate: Template {
 
     public static func head(with page: Page) -> Component {
         DefaultHeadContent(
-            title: (page as? TemplatedPage)?.title,
+            siteTitle: self.title,
+            pageTitle: (page as? TemplatedPage)?.title,
             canonicalURL: (page as? TemplatedPage)?.canonicalURL
         )
     }
 
     public static func body(with page: Page) -> Component {
-        Div {
-            Div(
-                page.body
-            )
-            .class("splash")
-        }
-        .class("container")
+        Div(
+            page.body
+        )
+        .style("""
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100%;
+        justify-content: center;
+        text-align: center;
+        """)
     }
 }

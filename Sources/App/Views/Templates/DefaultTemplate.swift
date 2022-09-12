@@ -8,7 +8,8 @@ struct DefaultTemplate: Template {
 
     public static func head(with page: Page) -> Component {
         DefaultHeadContent(
-            title: (page as? TemplatedPage)?.title,
+            siteTitle: self.title,
+            pageTitle: (page as? TemplatedPage)?.title,
             canonicalURL: (page as? TemplatedPage)?.canonicalURL
         )
         page.head
@@ -17,6 +18,14 @@ struct DefaultTemplate: Template {
     public static func body(with page: Page) -> Component {
         page.body
     }
+
+//    private static func title(for page: Page) -> String {
+//        if let pageTitle = (page as? TemplatedPage)?.title {
+//            return "\(pageTitle) - \(self.title)
+//        } else {
+//            return self.title
+//        }
+//    }
 }
 
 // MARK: - Extensions

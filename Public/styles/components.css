@@ -1,0 +1,62 @@
+/* Navbar */
+
+.navbar {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    justify-content: center;
+    padding: 1.5rem 0;
+    /* min-height: 3rem; */
+}
+
+/* Titles */
+
+.section-title:before {
+    content: "// ";
+    display: inline-block;
+}
+
+/* Intro */
+
+.intro {
+    font-size: 1.2em;
+    margin: 6rem 1.5rem;
+}
+
+.intro a.name {
+    border-bottom-width: .3rem;
+}
+
+/* Instrument Table */
+
+table.instrument-table tr th:first-child {
+    min-width: 200px;
+}
+
+/* Instrument Page */
+
+section.instrument .title {
+    font-weight: 600;
+}
+
+section.instrument .row {
+    margin-bottom: 0.5rem;
+}
+
+section.instrument .row div {
+    margin-left: 1rem;
+}
+
+section.instrument .muted {
+    opacity: 0.35;
+}
+
+/* Tooltip */
+
+.tooltip {
+    cursor: help;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 4px;
+}

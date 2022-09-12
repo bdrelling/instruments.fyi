@@ -15,7 +15,7 @@ struct Intro: Component {
             }
 
             Paragraph {
-                Text("It's a super cool project, for instruments.")
+                Text("This space is under active development. Check back in a bit!")
             }
         }
         .class("intro")

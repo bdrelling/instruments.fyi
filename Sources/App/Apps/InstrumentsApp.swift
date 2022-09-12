@@ -1,5 +1,6 @@
 // Copyright © 2022 Brian Drelling. All rights reserved.
 
+import API
 import PlotVapor
 import Vapor
 import VaporExtensions
@@ -18,6 +19,10 @@ public struct InstrumentsApp: ApplicationDelegate {
         self.app.environment.baseURL
     }
 
+    private let subApps: [AppConfiguring] = [
+        InstrumentsAPI(),
+    ]
+
     // MARK: Initializers
 
     public init(_ app: Application) {
@@ -34,6 +39,9 @@ public struct InstrumentsApp: ApplicationDelegate {
         try self.configureRedirectMiddleware(app)
         try self.configureSitemapMiddleware(app)
         try self.configureRoutes(app)
+
+        // configure each of our sub-applications
+        try self.subApps.forEach { try $0.configure(app) }
     }
 
     private func configureRedirectMiddleware(_ app: Application) throws {

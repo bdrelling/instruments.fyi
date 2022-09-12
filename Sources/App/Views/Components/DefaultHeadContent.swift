@@ -4,7 +4,8 @@ import Plot
 import PlotVapor
 
 public struct DefaultHeadContent: Component {
-    public let title: String?
+    public let siteTitle: String
+    public let pageTitle: String?
     public let canonicalURL: String?
 
     public var body: Component {
@@ -14,8 +15,10 @@ public struct DefaultHeadContent: Component {
             // Responsiveness
             Meta(name: "viewport", content: "width=device-width, initial-scale=1")
             // Title
-            if let title = self.title {
-                Title(title)
+            if let pageTitle = self.pageTitle {
+                Title("\(pageTitle) - \(self.siteTitle)")
+            } else {
+                Title(self.siteTitle)
             }
             // Canonical URL
             if let canonicalURL = self.canonicalURL {
@@ -27,11 +30,13 @@ public struct DefaultHeadContent: Component {
             // Stylesheets
             StyleSheet("/styles/structure.css")
             StyleSheet("/styles/primary.css")
+            StyleSheet("/styles/components.css")
         }
     }
 
-    init(title: String? = nil, canonicalURL: String? = nil) {
-        self.title = title
+    init(siteTitle: String, pageTitle: String? = nil, canonicalURL: String? = nil) {
+        self.siteTitle = siteTitle
+        self.pageTitle = pageTitle
         self.canonicalURL = canonicalURL
     }
 }

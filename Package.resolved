@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/InstrumentKit",
       "state" : {
-        "revision" : "b639574f70779618a95f526febfe28e0cfa2fdd8",
-        "version" : "0.1.7"
+        "revision" : "dcc21600e1252bd0ae5824e385aa9828f5daa803",
+        "version" : "0.2.4"
       }
     },
     {

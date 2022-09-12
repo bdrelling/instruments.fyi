@@ -1,15 +1,28 @@
+/* Root Element */
+
+html {
+    height: 100%;
+}
+
 /* Body and Container */
 
 body {
     font-size: 1em;
+    height: 100%;
     line-height: 1.5;
     margin: 0;
 }
 
-@media screen and (min-width: 1024px) {
+body>.container {
+    height: 100%;
+    margin: 0 1.5rem;
+}
+
+/* The min-width is the side margins of the container + the maximum preferred width. */
+@media screen and (min-width: calc(1200px + 3rem)) {
     body>.container {
         margin: 0 auto;
-        max-width: 800px;
+        max-width: 1200px;
     }
 }
 
@@ -75,4 +88,10 @@ p {
     line-height: 1.7;
     margin-bottom: 1.5rem;
     margin-top: 0;
+}
+
+/* Section */
+
+section {
+    margin: 0 0 4.5rem;
 }
