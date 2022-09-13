@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - '.github/workflows/deploy_app.yml'
+      - '.github/workflows/deploy_website.yml'
       - 'Plugins/**'
       - 'Public/**'
       - 'Snippets/**'
