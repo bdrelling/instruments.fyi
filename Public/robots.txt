@@ -1,0 +1,5 @@
+# Allow access to all pages from all sources.
+User-agent: *
+Allow: /
+
+Sitemap: https://instruments.fyi/sitemap.xml
