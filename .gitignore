@@ -17,6 +17,7 @@
 
 ## Xcode
 xcuserdata/
+*.xcworkspace
 
 ## Xcode Playgrounds
 timeline.xctimeline
