@@ -31,9 +31,8 @@ public struct InstrumentsApp: ApplicationDelegate {
     // MARK: Methods
 
     public func configure(_ app: Application) throws {
-        // serve files from /Public folder
-        let fileMiddleware = FileMiddleware(publicDirectory: app.directory.publicDirectory)
-        app.middleware.use(fileMiddleware)
+        app.servePublicFiles()
+        app.enableStructureCDN()
 
         try self.configureRedirectMiddleware(app)
         try self.configureRoutes(app)
