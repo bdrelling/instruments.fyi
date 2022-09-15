@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/InstrumentKit",
       "state" : {
-        "revision" : "576e260317eec7cd515bcf75c24fd767838b96b6",
-        "version" : "0.3.2"
+        "revision" : "109d07e66592102317360975b82141b1f7db846b",
+        "version" : "0.4.0"
       }
     },
     {
@@ -95,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/PlotVapor",
       "state" : {
-        "revision" : "b798a1866343c03f0abaedfbf6dce29864a53de1",
-        "version" : "0.4.3"
+        "revision" : "ae69d58f00a0ccb1f52eec0af897a028418c83ba",
+        "version" : "0.4.4"
       }
     },
     {
