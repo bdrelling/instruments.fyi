@@ -11,10 +11,8 @@ let package = Package(
         // 💧 Vapor
         .package(url: "https://github.com/vapor/vapor", from: "4.63.0"),
         // External
-        .package(url: "https://github.com/bdrelling/InstrumentKit", .upToNextMinor(from: "0.2.4")),
-        .package(url: "https://github.com/bdrelling/PlotVapor", .upToNextMinor(from: "0.4.1")),
-        .package(url: "https://github.com/bdrelling/VaporExtensions", .upToNextMinor(from: "0.2.0")),
-        .package(url: "https://github.com/vapor-community/vapor-sitemap", from: "1.1.0"),
+        .package(url: "https://github.com/bdrelling/InstrumentKit", .upToNextMinor(from: "0.3.2")),
+        .package(url: "https://github.com/bdrelling/Structure", .upToNextMinor(from: "0.3.10")),
         // Development
         .package(url: "https://github.com/swift-kipple/Tools", from: "0.3.2"),
     ],
@@ -29,18 +27,16 @@ let package = Package(
             name: "API",
             dependencies: [
                 .product(name: "InstrumentKit", package: "InstrumentKit"),
+                .product(name: "Structure", package: "Structure"),
                 .product(name: "Vapor", package: "vapor"),
-                .product(name: "VaporExtensions", package: "VaporExtensions"),
             ]
         ),
         .target(
             name: "App",
             dependencies: [
                 .product(name: "InstrumentKit", package: "InstrumentKit"),
-                .product(name: "PlotVapor", package: "PlotVapor"),
+                .product(name: "Structure", package: "Structure"),
                 .product(name: "Vapor", package: "vapor"),
-                .product(name: "VaporExtensions", package: "VaporExtensions"),
-                .product(name: "VaporSitemap", package: "vapor-sitemap"),
                 .target(name: "API"),
             ],
             swiftSettings: [

@@ -1,27 +1,9 @@
-/* Navbar */
-
-.navbar {
-    align-items: stretch;
-    display: flex;
-    flex-direction: row;
-    font-size: 1.2em;
-    justify-content: center;
-    padding: 1.5rem 0;
-    /* min-height: 3rem; */
-}
-
-/* Titles */
-
-.section-title:before {
-    content: "// ";
-    display: inline-block;
-}
-
 /* Intro */
 
 .intro {
     font-size: 1.2em;
     margin: 6rem 1.5rem;
+    text-align: center;
 }
 
 .intro a.name {
@@ -50,13 +32,4 @@ section.instrument .row div {
 
 section.instrument .muted {
     opacity: 0.35;
-}
-
-/* Tooltip */
-
-.tooltip {
-    cursor: help;
-    text-decoration: underline;
-    text-decoration-style: dashed;
-    text-underline-offset: 4px;
 }

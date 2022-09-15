@@ -9,13 +9,7 @@ struct HomePage: TemplatedPage {
     let title = "Home"
 
     var body: Component {
-        Div {
-            Intro()
-
-            InstrumentTable(instruments: StringInstrument.allCases)
-
-            PrimaryFooter()
-        }
-        .class("container")
+        Intro()
+        InstrumentTable(instruments: StringInstrument.allCases)
     }
 }

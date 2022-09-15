@@ -56,6 +56,15 @@
         }
       },
       {
+        "package": "Ink",
+        "repositoryURL": "https://github.com/JohnSundell/Ink",
+        "state": {
+          "branch": null,
+          "revision": "77c3d8953374a9cf5418ef0bd7108524999de85a",
+          "version": "0.5.1"
+        }
+      },
+      {
         "package": "multipart-kit",
         "repositoryURL": "https://github.com/vapor/multipart-kit.git",
         "state": {
@@ -71,15 +80,6 @@
           "branch": null,
           "revision": "b358860fe565eb53e98b1f5807eb5939c8124547",
           "version": "0.11.0"
-        }
-      },
-      {
-        "package": "PlotVapor",
-        "repositoryURL": "https://github.com/bdrelling/PlotVapor",
-        "state": {
-          "branch": null,
-          "revision": "e5a40c9e74dc0b93b189a918bb79ebacb40d8c52",
-          "version": "0.4.1"
         }
       },
       {
@@ -251,24 +251,6 @@
           "branch": null,
           "revision": "971becba16d6faf5c4cb869d2e3026e822d09059",
           "version": "4.65.1"
-        }
-      },
-      {
-        "package": "VaporSitemap",
-        "repositoryURL": "https://github.com/vapor-community/vapor-sitemap",
-        "state": {
-          "branch": null,
-          "revision": "8a6246b3593fbec3f920b2d76ad05c1ecdff4cd1",
-          "version": "1.1.0"
-        }
-      },
-      {
-        "package": "VaporExtensions",
-        "repositoryURL": "https://github.com/bdrelling/VaporExtensions",
-        "state": {
-          "branch": null,
-          "revision": "54516486fade14e436ed0d26dd3c66cfb9dae7d6",
-          "version": "0.2.0"
         }
       },
       {

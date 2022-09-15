@@ -16,17 +16,17 @@ struct InstrumentTable: Component {
         TableHeaderCell("Courses")
 
         TableHeaderCell("Classification")
-            .class("tooltip")
+            .class("help-text")
             .attribute(named: "title", value: "Hornbostel-Sachs Classification")
 
         TableHeaderCell("Standard Tuning")
 
         TableHeaderCell("Countries")
-            .class("tooltip")
+            .class("help-text")
             .attribute(named: "title", value: "Countries of Origin")
 
         TableHeaderCell("Year")
-            .class("tooltip")
+            .class("help-text")
             .attribute(named: "title", value: "Approximate Year Invented/Adapted")
 
         TableHeaderCell("Resources")
@@ -42,11 +42,7 @@ struct InstrumentTable: Component {
                     TableCell(String(instrument.numberOfStrings))
                     TableCell(String(instrument.numberOfCourses))
 
-                    TableCell {
-                        for classification in instrument.classifications {
-                            Div(classification.rawValue)
-                        }
-                    }
+                    TableCell(instrument.classification.rawValue)
 
                     TableCell {
                         if let standardTuning = instrument.standardTuning {

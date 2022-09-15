@@ -1,8 +1,8 @@
 // Copyright © 2022 Brian Drelling. All rights reserved.
 
 import InstrumentKit
+import Structure
 import Vapor
-import VaporExtensions
 
 final class InstrumentController {
     private func instrument(req: Request) async throws -> View {

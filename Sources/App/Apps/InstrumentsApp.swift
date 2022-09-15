@@ -2,9 +2,8 @@
 
 import API
 import PlotVapor
+import Structure
 import Vapor
-import VaporExtensions
-import VaporSitemap
 
 public struct InstrumentsApp: ApplicationDelegate {
     // MARK: Shared Instance
@@ -37,8 +36,9 @@ public struct InstrumentsApp: ApplicationDelegate {
         app.middleware.use(fileMiddleware)
 
         try self.configureRedirectMiddleware(app)
-        try self.configureSitemapMiddleware(app)
         try self.configureRoutes(app)
+
+        self.configureSitemap(app)
 
         // configure each of our sub-applications
         try self.subApps.forEach { try $0.configure(app) }
@@ -70,25 +70,10 @@ public struct InstrumentsApp: ApplicationDelegate {
         }
     }
 
-    private func configureSitemapMiddleware(_ app: Application) throws {
-        // creates a dynamic sitemap
-        app.middleware.use(SitemapMiddleware(
-            isSitemap: { req in
-                // Whether or not the middleware should handle the path.
-                req.url.path == "/sitemap.xml"
-            }, generateURLs: { req in
-                let paths = [
-                    "",
-                    // "about",
-                ]
-
-                return paths.map { path in
-                    "\(app.environment.baseURL)/\(path)"
-                }
-
-                .map(SitemapURL.init)
-            }
-        ))
+    private func configureSitemap(_ app: Application) {
+        app.configureSitemap(baseURL: app.environment.baseURL, paths: [
+            "",
+        ])
     }
 
     private func configureRoutes(_ app: Application) throws {
@@ -104,5 +89,12 @@ public struct InstrumentsApp: ApplicationDelegate {
         }
 
         try app.register(collection: RootController())
+
+        // Set our global JSON encoder for all routes to sort keys.
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.sortedKeys]
+
+        // override the global encoder used for the `.json` media type
+        ContentConfiguration.global.use(encoder: encoder, for: .json)
     }
 }

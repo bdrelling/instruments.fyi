@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swift-kipple/Core",
       "state" : {
-        "revision" : "906e5d819342b38d4d919e875f38be8fcd7b31e9",
-        "version" : "0.10.3"
+        "revision" : "381c5f29f83a80738f91934f6671681fe3e363fa",
+        "version" : "0.10.4"
       }
     },
     {
@@ -55,12 +55,21 @@
       }
     },
     {
+      "identity" : "ink",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnSundell/Ink",
+      "state" : {
+        "revision" : "77c3d8953374a9cf5418ef0bd7108524999de85a",
+        "version" : "0.5.1"
+      }
+    },
+    {
       "identity" : "instrumentkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/InstrumentKit",
       "state" : {
-        "revision" : "dcc21600e1252bd0ae5824e385aa9828f5daa803",
-        "version" : "0.2.4"
+        "revision" : "576e260317eec7cd515bcf75c24fd767838b96b6",
+        "version" : "0.3.2"
       }
     },
     {
@@ -86,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/PlotVapor",
       "state" : {
-        "revision" : "e5a40c9e74dc0b93b189a918bb79ebacb40d8c52",
-        "version" : "0.4.1"
+        "revision" : "b798a1866343c03f0abaedfbf6dce29864a53de1",
+        "version" : "0.4.3"
       }
     },
     {
@@ -106,6 +115,15 @@
       "state" : {
         "revision" : "3c5413a229bc2abc962dab17ea66d25e448ad344",
         "version" : "3.21.0"
+      }
+    },
+    {
+      "identity" : "structure",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bdrelling/Structure",
+      "state" : {
+        "revision" : "cee092db2f4b24c645a00e3dece0131e45bce9b2",
+        "version" : "0.3.10"
       }
     },
     {
@@ -257,26 +275,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vapor/vapor",
       "state" : {
-        "revision" : "c814b6f6900bd479fd93fa28aea3b45afb6ea342",
-        "version" : "4.65.0"
-      }
-    },
-    {
-      "identity" : "vapor-sitemap",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/vapor-community/vapor-sitemap",
-      "state" : {
-        "revision" : "8a6246b3593fbec3f920b2d76ad05c1ecdff4cd1",
-        "version" : "1.1.0"
-      }
-    },
-    {
-      "identity" : "vaporextensions",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/bdrelling/VaporExtensions",
-      "state" : {
-        "revision" : "54516486fade14e436ed0d26dd3c66cfb9dae7d6",
-        "version" : "0.2.0"
+        "revision" : "dda0de537e7906414dccd551e77095be1e34e3da",
+        "version" : "4.65.2"
       }
     },
     {

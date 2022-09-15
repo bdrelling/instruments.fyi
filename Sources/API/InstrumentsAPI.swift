@@ -1,9 +1,9 @@
 // Copyright © 2022 Brian Drelling. All rights reserved.
 
+import Foundation
 import PlotVapor
+import Structure
 import Vapor
-import VaporExtensions
-import VaporSitemap
 
 public struct InstrumentsAPI: AppConfiguring {
     // MARK: Initializers

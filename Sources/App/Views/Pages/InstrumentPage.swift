@@ -13,103 +13,98 @@ struct InstrumentPage: TemplatedPage {
     }
 
     var body: Component {
-        Div {
-            PrimaryNavbar()
+        Section {
+            H2(self.instrument.name)
 
-            Section {
-                H2(self.instrument.name)
+            Div {
+                Header("Strings")
+                Span(String(self.instrument.numberOfStrings))
+            }
+            .class("row")
 
-                Div {
-                    Header("Strings")
-                    Span(String(self.instrument.numberOfStrings))
+            Div {
+                Header("Courses")
+                Span(String(self.instrument.numberOfCourses))
+            }
+            .class("row")
+
+            Div {
+                Header("Classification")
+                    .class("help-text")
+                    .attribute(named: "title", value: "Hornbostel-Sachs Classification")
+                Span(self.instrument.classification.rawValue)
+            }
+            .class("row")
+
+            Div {
+                Header("Standard Tuning")
+                if let standardTuning = self.instrument.standardTuning {
+                    Span(standardTuning.notes.description)
+                } else {
+                    Span("n/a")
+                        .class("muted")
                 }
-                .class("row")
+            }
+            .class("row")
 
-                Div {
-                    Header("Courses")
-                    Span(String(self.instrument.numberOfCourses))
-                }
-                .class("row")
+            Div {
+                Header("Alternate Tunings")
 
-                Div {
-                    Header("Classification(s)")
-                    Span(self.instrument.classifications.description)
-                }
-                .class("row")
-
-                Div {
-                    Header("Standard Tuning")
-                    if let standardTuning = self.instrument.standardTuning {
-                        Span(standardTuning.notes.description)
-                    } else {
-                        Span("n/a")
-                            .class("muted")
+                if !self.instrument.alternateTunings.isEmpty {
+                    for tuning in self.instrument.alternateTunings {
+                        Div(tuning.description)
                     }
+                } else {
+                    Span("Unknown")
+                        .class("muted")
                 }
-                .class("row")
+            }
+            .class("row")
 
-                Div {
-                    Header("Alternate Tunings")
+            Div {
+                Header("Countries")
 
-                    if !self.instrument.alternateTunings.isEmpty {
-                        for tuning in self.instrument.alternateTunings {
-                            Div(tuning.description)
-                        }
-                    } else {
-                        Span("Unknown")
-                            .class("muted")
+                if !self.instrument.countries.isEmpty {
+                    for country in self.instrument.countries {
+                        Span(country.flag)
+                            .attribute(named: "title", value: country.localizedName(locale: self.instrument.locale))
                     }
+                } else {
+                    Span("Unknown")
+                        .class("muted")
                 }
-                .class("row")
+            }
+            .class("row")
 
+            Div {
+                Header("Year")
+
+                if let year = self.instrument.year {
+                    Span(String(year))
+                } else {
+                    Span("Unknown")
+                        .class("muted")
+                }
+            }
+            .class("row")
+
+            if !self.instrument.resources.isEmpty {
                 Div {
-                    Header("Countries")
+                    Header("Additional Resources")
 
-                    if !self.instrument.countries.isEmpty {
-                        for country in self.instrument.countries {
-                            Span(country.flag)
-                                .attribute(named: "title", value: country.localizedName(locale: self.instrument.locale))
-                        }
-                    } else {
-                        Span("Unknown")
-                            .class("muted")
-                    }
-                }
-                .class("row")
-
-                Div {
-                    Header("Year")
-
-                    if let year = self.instrument.year {
-                        Span(String(year))
-                    } else {
-                        Span("Unknown")
-                            .class("muted")
-                    }
-                }
-                .class("row")
-
-                if !self.instrument.resources.isEmpty {
-                    Div {
-                        Header("Additional Resources")
-
-                        for resource in self.instrument.resources {
-                            Link(url: resource.url) {
-                                switch resource.key {
-                                case .wikipedia:
-                                    Text("Wikipedia")
-                                }
+                    for resource in self.instrument.resources {
+                        Link(url: resource.url) {
+                            switch resource.key {
+                            case .wikipedia:
+                                Text("Wikipedia")
                             }
                         }
                     }
-                    .class("row")
                 }
+                .class("row")
             }
-            .class("instrument")
-
-            PrimaryFooter()
         }
-        .class("container")
+        .class("instrument")
     }
 
     init(instrument: StringInstrument) {
