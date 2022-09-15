@@ -122,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/bdrelling/Structure",
       "state" : {
-        "revision" : "cee092db2f4b24c645a00e3dece0131e45bce9b2",
-        "version" : "0.3.10"
+        "revision" : "945ed8a5a17221b847156e0b143abd778b0746b1",
+        "version" : "0.3.11"
       }
     },
     {

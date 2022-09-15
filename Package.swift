@@ -12,7 +12,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/vapor", from: "4.63.0"),
         // External
         .package(url: "https://github.com/bdrelling/InstrumentKit", .upToNextMinor(from: "0.4.0")),
-        .package(url: "https://github.com/bdrelling/Structure", .upToNextMinor(from: "0.3.10")),
+        .package(url: "https://github.com/bdrelling/Structure", .upToNextMinor(from: "0.3.11")),
         // Development
         .package(url: "https://github.com/swift-kipple/Tools", from: "0.3.2"),
     ],
